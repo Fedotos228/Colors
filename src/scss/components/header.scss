@@ -1,0 +1,191 @@
+.header {
+    position: relative;
+    height: 85px;
+
+    padding: 20px 0;
+    box-shadow: 0px 4px 30px rgba(120, 120, 120, 0.1);
+
+    &.sticky {
+        position: fixed;
+        width: 100%;
+        left: 0;
+        top: 0;
+        right: 0;
+        animation: fixedHeader 0.4s;
+        z-index: 5;
+    }
+
+    &__container {
+        display: flex;
+        align-items: center;
+        justify-content: space-between;
+    }
+
+    &__left {
+        display: flex;
+        align-items: center;
+        @include adaptiv-value('gap', 80, 10, 1);
+    }
+
+    &__nav {
+        display: flex;
+        align-items: center;
+        @include adaptiv-value('gap', 60, 10, 1);
+
+        li {
+            position: relative;
+            transition: .19s;
+
+            &.active {
+                a {
+                    color: $redcolor;
+                }
+            }
+
+            a {
+                display: flex;
+                align-items: center;
+                gap: 5px;
+
+                span {
+                    color: $maincolor;
+                    transition: .19s;
+                }
+
+                &:hover {
+                    a {
+                        transition: .19s;
+
+                        &:hover {
+                            color: $redcolor;
+                        }
+                    }
+                }
+            }
+
+            .submenu {
+                position: absolute;
+                width: 200px;
+                top: 55px;
+                background-color: #FFFFFF;
+                opacity: 0;
+                visibility: hidden;
+                transition: .19s;
+
+                @media (max-width: $tablet) {
+                    position: unset;
+                    display: none;
+                }
+
+
+                &.open {
+                    top: 35px;
+                    opacity: 1;
+                    visibility: visible;
+
+                    @media (max-width: $tablet) {
+                        display: block;
+                    }
+                }
+
+                li {
+                    width: 100%;
+                    padding: 20px 30px;
+
+                    @media (max-width: $tablet) {
+                        padding: 15px 5px 15px 30px;
+                    }
+
+                    a {
+                        font-size: 14px;
+                        color: $maincolor;
+                    }
+
+                    &:hover {
+                        background-color: $redcolor;
+
+                        a {
+                            color: #FFFFFF;
+                        }
+                    }
+                }
+            }
+        }
+    }
+
+    &__right {
+        display: flex;
+        align-items: center;
+        @include adaptiv-value('gap', 60, -20, 1);
+
+        a {
+            display: flex;
+            align-items: center;
+            gap: 10px;
+        }
+
+        .language {
+            display: flex;
+            align-items: center;
+            gap: 10px;
+
+            li {
+                font-weight: 700;
+                cursor: pointer;
+
+                &.active {
+                    color: $redcolor;
+                }
+            }
+        }
+    }
+
+    .burger__body {
+        position: fixed;
+        right: -40%;
+        width: 40%;
+        height: 100%;
+        padding-top: 40px;
+        padding-left: 40px;
+        background-color: #FFFFFF;
+        transition: .2s;
+        box-shadow: 0px 4px 30px rgba(120, 120, 120, 0.1);
+
+
+        @media (max-width: $mobileMedium) {
+            right: -50%;
+            width: 50%;
+        }
+
+        @media (max-width: $mobileSmall) {
+            right: -70%;
+            width: 70%;
+        }
+
+        &.active {
+            right: 0;
+        }
+
+        .header__nav,
+        .header__right {
+            align-items: flex-start;
+            flex-direction: column;
+            gap: 25px;
+        }
+
+        .header__nav {
+            margin-bottom: 30px;
+        }
+
+    }
+}
+
+@keyframes fixedHeader {
+    from {
+        transform: translateY(-50px);
+    }
+
+    to {
+        transform: translateY(0);
+    }
+}

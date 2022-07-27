@@ -1,0 +1,116 @@
+.hero {
+    height: 85vh;
+
+    &__container {
+        height: 100%;
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        gap: 30px;
+    }
+
+    h1 {
+        color: #FFFFFF;
+    }
+}
+
+.advertisement-intro {
+    .big-img {
+        top: 0;
+    }
+}
+
+.poligraph-intro {
+    .big-img {
+        top: -55px;
+    }
+}
+
+.materials-intro {
+    .big-img {
+        top: -60px;
+        right: 10%;
+        max-width: 424px;
+        max-height: 570px;
+    }
+}
+
+.design {
+    .big-img {
+        top: -52px;
+        right: 10%;
+        width: auto;
+    }
+}
+
+.clients {
+    &__header {
+        strong {
+            display: block;
+            color: $redcolor;
+            @include adaptiv-value('font-size', 64, 48, 1);
+            line-height: 83px;
+            margin-bottom: 10px;
+        }
+
+        h2 {
+            margin-bottom: 30px;
+        }
+    }
+
+    p {
+        max-width: 960px;
+        color: #888888;
+        margin-bottom: 50px;
+    }
+
+    .page__clients-slider {
+        border-top: 1px solid rgba(0, 0, 0, 0.1);
+        padding: 60px 0;
+
+        .clients-slider__container {
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+
+            .clients-slider__body {
+                max-width: 950px;
+
+                .clients-slider__slider {
+                    position: relative;
+
+                    .slider-clients__body {
+                        max-width: 76%;
+
+                        .slider-clients__slide {
+                            display: flex;
+                            align-items: center;
+                            justify-content: center;
+                        }
+                    }
+
+                    .slider-clients-controls {
+                        position: absolute;
+                        top: -50%;
+                        width: 100%;
+
+                        &__arrows {
+                            display: flex;
+                            justify-content: space-between;
+
+                            .slider-arrow {
+                                display: flex;
+                                align-items: center;
+                                justify-content: center;
+                                width: 60px;
+                                height: 60px;
+                                background: $redcolor;
+                                border-radius: 60px;
+                            }
+                        }
+                    }
+                }
+            }
+        }
+    }
+}

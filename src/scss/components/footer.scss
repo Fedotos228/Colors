@@ -1,0 +1,37 @@
+.footer {
+    background-color: #0E0E0E;
+    padding: 60px 0;
+
+    &__container {
+        display: flex;
+        align-items: center;
+        justify-content: space-between;
+    }
+
+    &__left {
+        display: flex;
+        align-items: center;
+        @include adaptiv-value('gap', 80, 20, 1);
+
+    }
+
+    &__list {
+        display: flex;
+        align-items: center;
+        @include adaptiv-value('gap', 60, 20, 1);
+
+        li {
+            a {
+                font-size: 14px;
+                line-height: 16px;
+                color: #FFFFFF;
+            }
+        }
+    }
+
+    &__socials {
+        display: flex;
+        align-items: center;
+        @include adaptiv-value('gap', 30, 10, 1);
+    }
+}
